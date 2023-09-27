@@ -10,10 +10,12 @@ namespace SwinAdventure
     public class Player : GameObject, IHaveInventory
     {
         private Inventory _inventory;
+        private Location _location;
 
         public Player(string name, string desc) : base (new string[] {"me", "inventory"}, name, desc)
         {
             _inventory = new Inventory();
+            _location = new Location();
         }
 
         public GameObject Locate(string ID)
@@ -30,6 +32,19 @@ namespace SwinAdventure
             get
             {
                 return _inventory;
+            }
+        }
+
+        public Location Location
+        {
+            get
+            {
+                return _location;
+            }
+
+            set
+            {
+                _location = value;
             }
         }
 

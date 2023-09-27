@@ -32,7 +32,7 @@ namespace SwinAdventureTests
         {
             _TestableBag.Inventory.Put(_Sword);
 
-            GameObject FoundItem = _TestableBag.Locate("weapon");
+            GameObject FoundItem = _TestableBag.Locate("sword");
 
             Assert.AreEqual(_Sword, FoundItem);
         }
@@ -54,21 +54,23 @@ namespace SwinAdventureTests
         [Test]
         public void TestBagFullDescription()
         {
+            _TestableBag.Inventory.Put(_Axe);
             string FullDesc = _TestableBag.FullDescription;
-            string Expected = "";
+            string Expected = "In the Default Bag, is a example axe (axe)";
             Assert.AreEqual(Expected, FullDesc);
         }
 
         [Test]
         public void TestBagInBag()
         {
-            _TestableBag.Inventory.Put(_SecondBag);
 
             _SecondBag.Inventory.Put(_Axe);
 
-            Assert.AreEqual(_SecondBag, _TestableBag.Locate("leather bag"));
+            _TestableBag.Inventory.Put(_SecondBag);
 
             Assert.AreEqual(_Axe, _SecondBag.Locate("axe"));
+
+            Assert.AreEqual(_SecondBag, _TestableBag.Locate("leather bag"));
 
             Assert.IsNull(_TestableBag.Locate("axe"));
         }

@@ -60,7 +60,7 @@ namespace SwinAdventureTests
         public void TestPlayerFullDesc()
         {
             string FullDesc = "You are " + _examplePlayer.Name + ". You are carrying: " + _examplePlayer.Inventory.ItemList;
-            string expected = "You are example player. You are carrying: example chain armor (example armor)example sword (example weapon)";
+            string expected = "You are example player. You are carrying: a example chain armor (example armor), a example sword (example weapon)";
             Assert.AreEqual(expected, FullDesc);
         }
         
