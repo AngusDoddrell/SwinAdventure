@@ -65,7 +65,7 @@ namespace SwinAdventure
                 string itemList = "";
                 foreach (Item item in _items)
                 {
-                    itemList += item.ShortDescription + ", ";
+                    itemList += "A " + item.ShortDescription + ", ";
                 }
                 // Remove the trailing comma and space, if any
                 if (!string.IsNullOrEmpty(itemList))

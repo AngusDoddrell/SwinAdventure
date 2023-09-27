@@ -28,7 +28,7 @@ namespace SwinAdventure
         {
             get
             {
-                return $"In the {this.Name}, you can see {_inventory.ItemList}";
+                return $"In the {this.Name}, is {_inventory.ItemList}";
             }
         }
 
