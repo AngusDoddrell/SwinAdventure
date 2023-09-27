@@ -67,7 +67,7 @@ namespace SwinAdventureTests
             _TestableInventory.Put(ExampleWeapon);
             _TestableInventory.Put(ExampleArmor);
 
-            string List = "ExampleWeaponOne (ExampleWeapon)" + "ExampleArmorOne (ExampleArmor)";
+            string List = "a ExampleWeaponOne (ExampleWeapon)" + ", a ExampleArmorOne (ExampleArmor)";
 
             string Actual = _TestableInventory.ItemList;
 

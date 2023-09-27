@@ -33,7 +33,12 @@ namespace SwinAdventure
                 return "What do you want to look in?";
             }
 
-            if(text.Length == 3)
+            if ((text.Length == 3) && text[2] == "location")
+            {
+                return p.Location.Description;
+            }
+
+            if (text.Length == 3)
             {
                 string find = text[2];
                 return LookAtIn(find, p as IHaveInventory);
@@ -63,6 +68,11 @@ namespace SwinAdventure
                 return p;
             }
 
+            if(containerID == "location")
+            {
+                return p.Location as IHaveInventory;
+            }
+
             Item foundItem = p.Inventory.Fetch(containerID);
 
             if (foundItem is IHaveInventory container)
@@ -83,7 +93,6 @@ namespace SwinAdventure
                 return foundDesc;
             } else
             {
-
                 return $"Cannot find {ThingID}.";
             }
 

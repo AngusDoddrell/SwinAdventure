@@ -62,12 +62,17 @@ namespace SwinAdventure
         {
             get
             {
-                string ItemList = "";
+                string itemList = "";
                 foreach (Item item in _items)
                 {
-                    ItemList += item.ShortDescription;
+                    itemList += "a " + item.ShortDescription + ", ";
                 }
-                return ItemList;
+                // Remove the trailing comma and space, if any
+                if (!string.IsNullOrEmpty(itemList))
+                {
+                    itemList = itemList.Remove(itemList.Length - 2);
+                }
+                return itemList;
             }
         }
     }

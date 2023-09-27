@@ -28,7 +28,7 @@ namespace SwinAdventureTests
         {
             _TestablePlayer.Inventory.Put(_gem);
             string Desc = _LookCommand.Execute(_TestablePlayer, new string[] { "look", "at", "inventory" });
-            Assert.AreEqual("You are example player, player 1. You are carrying: Gemstone (gemstone)", Desc);
+            Assert.AreEqual("You are example player, player 1. You are carrying: a Gemstone (gemstone)", Desc);
         }
 
         [Test]
